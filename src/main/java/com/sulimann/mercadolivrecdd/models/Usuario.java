@@ -7,7 +7,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.sulimann.mercadolivrecdd.utils.constants.TableName;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,18 +23,19 @@ public class Usuario {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "usuario", nullable = false, unique = true)
   private String email;
-
-  @Column(name = "senha", nullable = false)
   private String senha;
 
-  @Column(name = "data_criacao", nullable = false)
   private LocalDateTime dataCriacao = LocalDateTime.now(ZoneId.of("UTC"));
 
   public Usuario(String email, String senha) {
     this.email = email;
     this.senha = new BCryptPasswordEncoder().encode(senha);
+  }
+
+  @Override
+  public String toString() {
+    return "Usuario [id=" + id + ", email=" + email + ", dataCriacao=" + dataCriacao + "]";
   }
 
 }

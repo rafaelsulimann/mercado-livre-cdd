@@ -13,18 +13,23 @@ import com.sulimann.mercadolivrecdd.utils.constants.Path;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
 @RestController
 @RequestMapping(value = Path.USUARIO)
 @RequiredArgsConstructor
+@Log4j2
 public class CriarUsuarioController {
 
     private final UsuarioRepository repository;
 
     @PostMapping
     public ResponseEntity<CriarUsuarioResponse> criarUsuario(@RequestBody @Valid CriarUsuarioRequest request) {
+        log.debug("Post recebido para criar um novo usuario, {}", request);
         Usuario usuario = request.toModel();
+        log.debug("Salvando {} no banco de dados", usuario);
         this.repository.save(usuario);
+        log.info("{} salvo no banco de dados", usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(new CriarUsuarioResponse(usuario));
     }
 

@@ -27,4 +27,9 @@ public class CriarUsuarioRequest {
     return new Usuario(this.email, this.senha);
   }
 
+  @Override
+  public String toString() {
+    return "CriarUsuarioRequest [email=" + email + "]";
+  }
+
 }

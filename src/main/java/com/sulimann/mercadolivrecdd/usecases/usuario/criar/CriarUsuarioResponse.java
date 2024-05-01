@@ -12,7 +12,6 @@ public class CriarUsuarioResponse {
 
   private Long id;
   private String email;
-  private String senha;
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
   private LocalDateTime dataCriacao;
@@ -20,7 +19,6 @@ public class CriarUsuarioResponse {
   public CriarUsuarioResponse(Usuario usuario) {
     this.id = usuario.getId();
     this.email = usuario.getEmail();
-    this.senha = usuario.getSenha();
     this.dataCriacao = usuario.getDataCriacao();
   }
 

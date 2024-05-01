@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivrecdd.utils.http;
+package com.sulimann.mercadolivrecdd.utils.clients.http;
 
 import java.util.Optional;
 

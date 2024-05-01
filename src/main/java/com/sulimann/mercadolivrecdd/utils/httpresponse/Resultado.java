@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivrecdd.core.utils.httpresponse;
+package com.sulimann.mercadolivrecdd.utils.httpresponse;
 
 public abstract class Resultado<S, E> {
   private Resultado() {}

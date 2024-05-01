@@ -1,4 +1,4 @@
-package com.sulimann.mercadolivrecdd.validators.validation;
+package com.sulimann.mercadolivrecdd.utils.validators.validation;
 
 import java.util.HashMap;
 import java.util.Map;
